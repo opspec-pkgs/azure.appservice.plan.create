@@ -11,7 +11,6 @@ if [ "$(az appservice plan show --name "$name" --resource-group "$resourceGroup"
 then
   echo "found exiting appservice plan"
 else
-  echo "appservice plan not found"
   echo "creating appservice plan"
   az appservice plan create \
     --name "$name" \
