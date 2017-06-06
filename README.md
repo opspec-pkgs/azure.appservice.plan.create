@@ -1,5 +1,5 @@
 # problem statement
-creates an azure appservice plan (if doesn't already exist)
+creates an azure appservice plan (if it doesn't already exist)
 
 # example usage
 
@@ -24,9 +24,9 @@ run:
   op:
     pkg: { ref: github.com/opspec-pkgs/azure.appservice.plan.create#VERSION }
     inputs: 
-      subscriptionId: ~
-      azureUsername: ~
-      azurePassword: ~
-      name: ~
-      resourceGroup: ~
+      subscriptionId:
+      azureUsername:
+      azurePassword:
+      name:
+      resourceGroup:
 ```
