@@ -1,5 +1,5 @@
 name: github.com/opspec-pkgs/azure.appservice.plan.create
-description: creates an azure app service plan (if doesn't already exist)
+description: creates an azure app service plan (if it doesn't already exist)
 inputs:
   subscriptionId:
     string:
