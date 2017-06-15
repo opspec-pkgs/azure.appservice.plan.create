@@ -25,8 +25,16 @@ run:
     pkg: { ref: github.com/opspec-pkgs/azure.appservice.plan.create#VERSION }
     inputs: 
       subscriptionId:
-      azureUsername:
-      azurePassword:
+      loginId:
+      loginSecret:
       name:
       resourceGroup:
+      # begin optional args
+      isLinux:
+      location:
+      loginTenantId:
+      loginType:
+      numberOfWorkers:
+      sku:
+      # end optional args
 ```

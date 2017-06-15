@@ -5,14 +5,14 @@ inputs:
     string:
       constraints: { minLength: 1 }
       description: id of azure subscription
-  azureUsername:
-    string:
-      constraints: { format: email }
-      description: email address of azure account
-  azurePassword:
+  loginId:
     string:
       constraints: { minLength: 1 }
-      description: password of azure account
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
       isSecret: true
   name:
     string:
@@ -22,6 +22,36 @@ inputs:
     string:
       constraints: { minLength: 1 }
       description: name of azure resource group
+  isLinux:
+    string:
+      constraints: { enum: ['true','false']}
+      description: if linux used as OS of provisioned appservice plan
+      default: 'true'
+  location:
+    string:
+      constraints: { minLength: 1 }
+      description: location of provisioned appservice plan
+      default: westus
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+      default: " "
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
+  numberOfWorkers:
+    number:
+      constraints: { minimum: 1, format: integer }
+      description: number of workers for provisioned appservice plan
+      default: 1
+  sku:
+    string:
+      constraints: { enum: [B1, B2, B3, D1, F1, FREE, P1, P2, P3, S1, S2, S3, SHARED] }
+      description: sku of provisioned appservice plan
+      default: B1
 run:
   container:
     image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
@@ -29,7 +59,13 @@ run:
     files: { /cmd.sh }
     envVars:
       subscriptionId:
-      azureUsername:
-      azurePassword:
+      loginId:
+      loginSecret:
       name:
       resourceGroup:
+      isLinux:
+      location:
+      loginTenantId:
+      loginType:
+      numberOfWorkers:
+      sku:
