@@ -20,23 +20,22 @@ opctl run github.com/opspec-pkgs/azure.appservice.plan.create#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.appservice.plan.create#VERSION }
-    inputs: 
-      subscriptionId:
-      loginId:
-      loginSecret:
-      name:
-      resourceGroup:
-      # begin optional args
-      isLinux:
-      location:
-      loginTenantId:
-      loginType:
-      numberOfWorkers:
-      sku:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.appservice.plan.create#VERSION }
+  inputs: 
+    subscriptionId:
+    loginId:
+    loginSecret:
+    name:
+    resourceGroup:
+    # begin optional args
+    isLinux:
+    location:
+    loginTenantId:
+    loginType:
+    numberOfWorkers:
+    sku:
+    # end optional args
 ```
 
 # Support
