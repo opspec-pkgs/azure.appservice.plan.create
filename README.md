@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/opspec-pkgs/azure.appservice.plan.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.appservice.plan.create)
+
 # Problem statement
 creates an azure appservice plan (if it doesn't already exist)
 
